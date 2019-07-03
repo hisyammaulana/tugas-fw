@@ -2,5 +2,5 @@
 
 
 -  cd private
-- php artisan update
+- composer update
 - rename .env.example menjadi .env

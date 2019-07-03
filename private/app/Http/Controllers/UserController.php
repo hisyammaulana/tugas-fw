@@ -57,7 +57,7 @@ class UserController extends Controller
             'level' => $request->level
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with(['success' => 'User Berhasil ditambah.']);
     }
 
     /**
@@ -149,7 +149,7 @@ class UserController extends Controller
             ]);
         }
 
-        return redirect()->back();
+        return redirect()->back()->with(['warning' => 'User Berhasil diperbarui.']);
     }
 
     /**
@@ -160,6 +160,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = User::findOrFail($id);
+        $data->delete();
+
+        return redirect()->back()->with(['error' => 'User berhasil dihapus']);
     }
 }

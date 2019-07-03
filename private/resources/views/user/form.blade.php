@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container">
+
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ $message }}</strong>
+    </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -66,7 +73,7 @@
                     <div class="form-group">
                         {!! Form::label('foto', 'Foto:', ['class' => 'col-lg-2 control-label']) !!}
                         <div class="col-lg-12">
-                            {!!Form::file("foto",[ "class" => "form-group",  ])!!}
+                            {!!Form::file("foto",[ "class" => "form-group", ])!!}
                         </div>
                     </div>
 

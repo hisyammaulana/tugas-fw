@@ -26,6 +26,7 @@ Route::prefix('/user')->group(function () {
     Route::get('/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::put('/edit/{id}', 'UserController@update')->name('user.update');
     Route::get('/detail/{id}', 'UserController@show')->name('user.detail');
+    Route::get('/home/delete/{id}', 'UserController@destroy')->name('user.destroy');
 });
 
 

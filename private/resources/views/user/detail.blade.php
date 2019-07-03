@@ -8,6 +8,9 @@
                 <div class="card-header">{{ __('Detail User') }}</div>
 
                 <div class="card-body">
+                    <div class="col-md-12">
+                        <img src="{{asset('public/images/'.$user->foto)}}" width="20%" height="20%" alt="">
+                    </div>
                     <p>Nama Lengkap : {{$user->name}}</p>
                     <p>Username : {{$user->username}}</p>
                     <p>Email : {{$user->email}}</p>

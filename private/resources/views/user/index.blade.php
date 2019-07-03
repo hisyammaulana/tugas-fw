@@ -8,6 +8,13 @@
         <button class="btn btn-primary" type="button" onclick="window.location='{{route("add")}}'" name="button">Tambah User</button>
     </div>
 
+    @if ($message = Session::get('error'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ $message }}</strong>
+    </div>
+    @endif
+
     <div class="table-responsive">
         <table class="table">
             <tr>
@@ -27,7 +34,7 @@
                     <td>
                         <a class="btn btn-success" href="{{route('user.detail', $data->id)}}" role="button"> Detail</a>
                         <a class="btn btn-primary" href="{{route('user.edit', $data->id)}}" role="button"> Edit</a>
-                        <a class="btn btn-danger" href="#" role="button"> Hapus</a>
+                        <a class="btn btn-danger" href="{{route('user.destroy', $data->id)}}" role="button"> Hapus</a>
                     </td>
                 </tr>
                 @endforeach
